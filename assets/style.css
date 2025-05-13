@@ -1,0 +1,595 @@
+/* =====================
+   Reset and Base Styles
+   ===================== */
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =====================
+   Layout Components
+   ===================== */
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #255fb4;
+  color: white;
+  padding-top: 20px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 200;
+}
+
+.sidebar h2 {
+  color: white;
+  padding-left: 15px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content wrapper */
+.main-content-area {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Top header elements */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.top-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #255fb4;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Page content */
+.page-content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+footer nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+footer nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+footer p {
+  margin-top: 10px;
+  color: #888;
+}
+
+/* =====================
+   Typography
+   ===================== */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* =====================
+   Form Elements
+   ===================== */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input:disabled {
+  background-color: #f9f9f9;
+  color: #666;
+  cursor: not-allowed;
+}
+
+button, 
+input[type="submit"] {
+  width: 100%;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* Button variations */
+.btn-danger,
+button.danger,
+button.red-button {
+  background-color: #c0392b;
+  color: white;
+}
+
+.btn-danger:hover,
+button.danger:hover,
+button.red-button:hover {
+  background-color: #a93226;
+}
+
+/* =====================
+   Tables
+   ===================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even):hover {
+  background-color: #f0f8ff;
+}
+
+/* =====================
+   Status Messages
+   ===================== */
+.msg {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success { 
+  color: green;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.error { 
+  color: red;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+}
+
+/* =====================
+   Action Links
+   ===================== */
+.edit-link, .delete-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 3px;
+}
+
+.edit-link {
+  color: #0077cc;
+}
+
+.delete-link {
+  color: #dc3545;
+}
+
+.edit-link:hover, .delete-link:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   Room Status Styling
+   ===================== */
+.occupied { 
+  color: red; 
+  font-weight: bold; 
+}
+
+.available { 
+  color: green; 
+  font-weight: bold; 
+}
+
+.surgery { 
+  color: orange; 
+  font-weight: bold; 
+}
+
+/* Room Legend */
+.room-legend {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.legend-label {
+  width: 80px;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  padding: 3px 0;
+}
+
+.legend-occupied {
+  color: red;
+  font-weight: bold;
+}
+
+.legend-available {
+  color: green;
+  font-weight: bold;
+}
+
+.legend-surgery {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Time display and notes */
+.current-time {
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.reservation-note {
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #555;
+  font-style: italic;
+}
+
+/* =====================
+   Section Headers
+   ===================== */
+.section-header {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* =====================
+   Index Page Specific
+   ===================== */
+.main-wrapper {
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  padding: 30px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.link-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.link-box a {
+  font-size: 18px;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.link-box a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   Responsive Design
+   ===================== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow-y: visible;
+  }
+  
+  .main-content-area {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .top-header {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+  
+  .top-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .top-nav a {
+    margin: 5px;
+  }
+  
+  form {
+    padding: 15px;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .link-box {
+    width: 90%;
+  }
+  
+  .room-legend {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .legend-item {
+    margin: 5px 0;
+  }
+  
+      /* =====================
+       Surgery Details Page
+       ===================== */
+    .surgery-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Surgery status indicators */
+    .status-scheduled { 
+      color: #f39c12; 
+    }
+    
+    .status-performed { 
+      color: #2ecc71; 
+    }
+    
+    .status-canceled { 
+      color: #e74c3c; 
+    }
+    
+    /* Add these new styles to the end of your existing style.css file */
+
+/* =====================
+   Table Wrapper for Staff View
+   ===================== */
+.table-wrapper,
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  position: relative; /* Creates a new stacking context */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Ensure table content stays within the main content area */
+.page-content table {
+  min-width: 800px; /* Prevents tables from getting too squished */
+}
+
+/* Ensure proper z-index stacking for the main content */
+.page-content {
+  position: relative; /* Creates a new stacking context */
+}
+
+/* Additional helper class for when tables need horizontal scrolling */
+.scrollable-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* For sticky table headers when scrolling vertically */
+.sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Fix for mobile view to ensure content stays in viewport */
+@media (max-width: 768px) {
+  .table-wrapper,
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scrollable-table {
+    width: 100%;
+  }
+}
+}
